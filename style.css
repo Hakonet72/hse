@@ -15,12 +15,17 @@ html, body {
   color: #333;
 }
 
-/* Header */
 header {
-  background-image: url('images/herobackground.jpg'); 
   text-align: center;
   padding: 50px 0;
-  background-color: #f2f2f2;
+  position: relative;
+  background: repeating-linear-gradient(
+    45deg,          /* 45 derece eğimli */
+    yellow,         /* Sarı başlat */
+    yellow 10px,    /* 10px genişlik */
+    transparent 10px, /* Araya boşluk */
+    transparent 20px /* 10px boşluktan sonra tekrar sarı */
+  );
 }
 
 header h1 {
@@ -43,6 +48,9 @@ nav {
   list-style: none;
   display: flex;
   justify-content: center;
+}
+.content p {
+  color: white;
 }
 
 .menu > li {
@@ -95,7 +103,9 @@ nav {
 
 /* İçerik Alanı */
 main {
-  background-image: url('images/mainbackground.jpg');
+  background-image: url('images/herobackground.jpg'); 
+  background-size: cover;
+  background-position: center;
   flex: 1; /* İçeriğin kalan kısmını kaplamasını sağlar */
   display: flex;
   flex-direction: column;
