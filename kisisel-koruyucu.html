@@ -3,23 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ISG Uzmanı - Hse Kim?</title>
+  <title>Kişisel Koruyucu Ekipman Mağazası</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ürün Grid Düzeni */
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .product {
+      width: calc(33.333% - 20px);
+      min-width: 150px;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: scale(1.03);
+    }
+    .product img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .product-name {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .product-price {
+      margin-top: 5px;
+      color: #007acc;
+    }
+    /* Ürün kutusunu link haline getirme */
+    .product a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>ISG Uzmanı</h1>
+    <h1>Kişisel Koruyucu Ekipman Mağazası</h1>
   </header>
-  
+
   <main>
-    <section class="content">
-      <p>Bu sayfa, ISG Uzmanı ile ilgili bilgilerin ve uygulamaların yer aldığı sayfadır.</p>
-      <p><a href="index.html">Ana Sayfaya Dön</a></p>
-    </section>
+    <div class="product-grid">
+      <!-- 1. Satır -->
+      <div class="product">
+        <a href="sales.html?product_id=1&product_name=Ürün%201">
+          <img src="images/product1.jpg" alt="Ürün 1">
+          <div class="product-name">Ürün 1</div>
+          <div class="product-price">₺100</div>
+        </a>
+      </div>
+      <div class="product">
+        <a href="sales.html?product_id=2&product_name=Ürün%202">
+          <img src="images/product2.jpg" alt="Ürün 2">
+          <div class="product-name">Ürün 2</div>
+          <div class="product-price">₺150</div>
+        </a>
+      </div>
+      <div class="product">
+        <a href="sales.html?product_id=3&product_name=Ürün%203">
+          <img src="images/product3.jpg" alt="Ürün 3">
+          <div class="product-name">Ürün 3</div>
+          <div class="product-price">₺120</div>
+        </a>
+      </div>
+      <!-- 2. Satır -->
+      <div class="product">
+        <a href="sales.html?product_id=4&product_name=Ürün%204">
+          <img src="images/product4.jpg" alt="Ürün 4">
+          <div class="product-name">Ürün 4</div>
+          <div class="product-price">₺130</div>
+        </a>
+      </div>
+      <div class="product">
+        <a href="sales.html?product_id=5&product_name=Ürün%205">
+          <img src="images/product5.jpg" alt="Ürün 5">
+          <div class="product-name">Ürün 5</div>
+          <div class="product-price">₺200</div>
+        </a>
+      </div>
+      <div class="product">
+        <a href="sales.html?product_id=6&product_name=Ürün%206">
+          <img src="images/product6.jpg" alt="Ürün 6">
+          <div class="product-name">Ürün 6</div>
+          <div class="product-price">₺180</div>
+        </a>
+      </div>
+    </div>
   </main>
-  
+
   <footer>
-    <p>&copy; 2025 Hse Kim?</p>
+    <p>&copy; 2025 Kişisel Koruyucu Mağazası</p>
   </footer>
 </body>
 </html>
