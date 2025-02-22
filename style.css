@@ -2,9 +2,9 @@
 
 /* Renk Değişkenleri */
 :root {
-  --turuncu: #ff6600; /* Ana turuncu */
+  --turuncu: #4a4a4a; /* Ana turuncu */
   --koyuturuncu: #054a83;
-  --turuncu-hover: #ff4500; /* Hover için daha koyu turuncu */
+  --turuncu-hover: #002147; /* Hover için daha koyu turuncu */
   --beyaz: #ffffff; /* Beyaz */
   --koyu-mavi: #002147; /* Koyu mavi */
   --gri: #e6e6e6; /* Gri */
