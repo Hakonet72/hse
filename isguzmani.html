@@ -4,7 +4,190 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ISG Uzmanı - Hse Kim?</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Renk Değişkenleri */
+    :root {
+      --turuncu: #4a4a4a; /* Ana turuncu */
+      --koyuturuncu: #054a83;
+      --turuncu-hover: #002147; /* Hover için daha koyu turuncu */
+      --beyaz: #ffffff; /* Beyaz */
+      --koyu-mavi: #002147; /* Koyu mavi */
+      --gri: #e6e6e6; /* Gri */
+      --acik-gri: #f5f5f5; /* Açık gri */
+      --siyah: #333; /* Siyah */
+    }
+
+    /* Temel stil ayarları */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--gri);
+      color: var(--koyu-mavi);
+    }
+
+    /* Header kısmındaki stil */
+    header {
+      text-align: center;
+      padding: 50px 0;
+      position: relative;
+      background-color: var(--beyaz);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header .logo {
+      width: 50px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: var(--koyu-mavi);
+    }
+
+    header h2 {
+      font-size: 1.5em;
+      color: var(--koyu-mavi);
+    }
+
+    /* Şeritler - Header Üst ve Alt */
+    header::before, 
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background-image: url('images/mainbackground.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+
+    header::before {
+      top: 0px;
+    }
+
+    header::after {
+      bottom: 0px;
+    }
+
+    /* Main İçeriği */
+    main {
+      background-color: var(--koyuturuncu);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px;
+      color: var(--koyu-mavi);
+    }
+
+    /* ISG Bilgisi */
+    .isg-info {
+      background-color: var(--beyaz);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .isg-info h2, .isg-info p {
+      color: var(--koyu-mavi); /* Metin rengini koyu mavi yaptık */
+    }
+
+    /* CV Bölümü */
+    .cv-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    /* CV Kategorileri */
+    .cv-category {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 280px;
+      max-width: 300px;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .a-class {
+      background-color: #e1f5fe;
+    }
+
+    .b-class {
+      background-color: #fff9c4;
+    }
+
+    .c-class {
+      background-color: #c8e6c9;
+    }
+
+    /* Profil Baloncukları */
+    .cv-bubble {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .cv-bubble p {
+      margin: 5px 0;
+    }
+
+    /* PDF Görüntüleme Bağlantısı */
+    .view-pdf {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: var(--turuncu);
+      color: var(--beyaz);
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .view-pdf:hover {
+      background-color: var(--turuncu-hover);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--koyu-mavi);
+      color: var(--beyaz);
+      width: 100%;
+      position: relative;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -88,7 +271,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
