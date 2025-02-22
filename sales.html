@@ -6,10 +6,10 @@
   <title>Satış Bölümü - Ürün Siparişi</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Aynı stilleri burada kullanabiliriz */
+    /* Genel stil ayarları */
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #e6e6e6;
+      background-color: #f4f4f4;
       color: #333;
       display: flex;
       flex-direction: column;
@@ -24,6 +24,9 @@
       background-color: #002147;
       color: #fff;
     }
+   header h1 {
+      color: #fff; /* Başlık rengini beyaz yapıyoruz */
+    }
     main {
       flex: 1;
       display: flex;
@@ -33,56 +36,47 @@
     }
     .sale-form-container {
       background-color: #fff;
-      padding: 20px;
+      padding: 30px;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       width: 100%;
-      max-width: 500px;
+      max-width: 600px;
       margin-top: 40px;
+      text-align: center;
     }
     .sale-form-container h2 {
-      text-align: center;
+      font-size: 24px;
       margin-bottom: 20px;
     }
-    .sale-form-container form {
-      display: flex;
-      flex-direction: column;
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 125%; /* 4:3 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 640px;
+      margin: 0 auto;
     }
-    .sale-form-container label {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    .sale-form-container input[type="text"],
-    .sale-form-container input[type="email"],
-    .sale-form-container select {
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .sale-form-container input[type="submit"] {
-      padding: 10px;
-      background-color: #007acc;
-      color: #fff;
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1em;
     }
-    .sale-form-container input[type="submit"]:hover {
-      background-color: #005fa3;
-    }
-    .continue-button {
+    .back-button {
       margin-top: 20px;
-      padding: 10px 20px;
+      padding: 12px 30px;
       background-color: #007acc;
       color: #fff;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 1em;
+      font-size: 1.2em;
+      transition: background-color 0.3s ease;
     }
-    .continue-button:hover {
+    .back-button:hover {
       background-color: #005fa3;
     }
   </style>
@@ -95,61 +89,23 @@
   <main>
     <div class="sale-form-container">
       <h2>Ürün Siparişi</h2>
-      <form id="sale-form" action="order-confirmation.html" method="post">
-        
-        <!-- Ürün Bilgileri -->
-        <input type="hidden" name="product_name" value="Kişisel Koruyucu Ekipman">
-        <input type="hidden" name="product_id" value="12345">
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Email adresiniz" required>
-        
-        <label for="country">Ülke:</label>
-        <input type="text" id="country" name="country" placeholder="Ülkeniz" required>
-        
-        <label for="region">Bölge:</label>
-        <input type="text" id="region" name="region" placeholder="Bölgeniz" required>
-        
-        <label for="city">İl:</label>
-        <input type="text" id="city" name="city" placeholder="İl" required>
-        
-        <label for="district">İlçe:</label>
-        <input type="text" id="district" name="district" placeholder="İlçe" required>
-        
-        <label for="neighborhood">Mahalle:</label>
-        <input type="text" id="neighborhood" name="neighborhood" placeholder="Mahalle" required>
-        
-        <label for="street">Cadde/Sokak:</label>
-        <input type="text" id="street" name="street" placeholder="Cadde/Sokak" required>
-        
-        <label for="building">Bina Adı:</label>
-        <input type="text" id="building" name="building" placeholder="Bina Adı (isteğe bağlı)">
-        
-        <label for="apartment">Kapı Numarası:</label>
-        <input type="text" id="apartment" name="apartment" placeholder="Kapı Numarası" required>
-      </form>
-      <button class="continue-button" onclick="window.location.href='payment-method.html'">Siparişe Devam Et</button>
+      
+      <!-- Google Forms Embed Kodu -->
+      <div class="iframe-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdWc2fEz2WXPe8SkwFD4rfoGHnAy5ACfu3zMkzR0tooF4BtVA/viewform?usp=header" 
+                frameborder="0" marginheight="0" marginwidth="0">
+          Yükleniyor...
+        </iframe>
+      </div>
+      
+      <!-- Ana Sayfaya Geri Dön Butonu -->
+      <button class="back-button" onclick="window.location.href='index.html'">Ana Sayfaya Dön</button>
+
     </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Satış Bölümü</p>
   </footer>
-
-  <script>
-    // Formu gönderme işlemi burada yapılabilir, ancak frontend ile direkt olarak mail gönderme mümkün değildir
-    document.getElementById("sale-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      
-      // Form verilerini al
-      const formData = new FormData(this);
-      
-      // Formu backend'e göndererek e-posta işlemi yapmalısınız.
-      // Örneğin, Google Forms veya benzeri hizmetlerle bu işlemi yapabilirsiniz.
-
-      // Form verilerini başarıyla gönderdikten sonra "Siparişe Devam Et" butonuna yönlendir
-      window.location.href = "payment-method.html";  // Kullanıcıyı ödeme sayfasına yönlendir
-    });
-  </script>
 </body>
 </html>
