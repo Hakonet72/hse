@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* Temel stil ayarları */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,19 +16,16 @@ html, body {
   color: #333;
 }
 
+/* Header Kısmı */
 header {
   text-align: center;
   padding: 50px 0;
   position: relative;
-  background: repeating-linear-gradient(
-    45deg,          /* 45 derece eğimli */
-    yellow,         /* Sarı başlat */
-    yellow 10px,    /* 10px genişlik */
-    transparent 10px, /* Araya boşluk */
-    transparent 20px /* 10px boşluktan sonra tekrar sarı */
-  );
+  background-color: #fff; /* Header arka planını beyaz yapalım */
+  z-index: 1; /* Header'ın üstte olmasını sağlıyoruz */
 }
 
+/* Başlıkların stilini ayarlıyoruz */
 header h1 {
   font-size: 3em;
   margin-bottom: 10px;
@@ -39,6 +37,30 @@ header h2 {
   color: #555;
 }
 
+/* Şeritler - Header Üst ve Alt */
+header::before, 
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-image: url('images/mainbackground.jpeg'); /* Resim ekleniyor */
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Şeritler header'ın arkasında olmalı */
+}
+
+/* Üst şerit */
+header::before {
+  top: -10px; /* Şerit başlığın üstünde olacak */
+}
+
+/* Alt şerit */
+header::after {
+  bottom: -10px; /* Şerit başlığın altında olacak */
+}
+
 /* Navigation Menü */
 nav {
   background-color: #002147;
@@ -48,9 +70,6 @@ nav {
   list-style: none;
   display: flex;
   justify-content: center;
-}
-.content p {
-  color: white;
 }
 
 .menu > li {
@@ -96,17 +115,16 @@ nav {
   background-color: #007acc;
 }
 
-/* Hover ile dropdown gösterme */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* İçerik Alanı */
+/* Main İçeriği */
 main {
-  background-image: url('images/herobackground.jpg'); 
+  background-image: url('images/herobackground.jpg');
   background-size: cover;
   background-position: center;
-  flex: 1; /* İçeriğin kalan kısmını kaplamasını sağlar */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -122,20 +140,20 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 20px 0;
   width: 100%;
-  max-width: 1000px; /* Aynı genişlikte olması için bu sınırlama */
+  max-width: 1000px;
 }
 
 /* CV Bölümü */
 .cv-section {
-  display: flex; /* Flex düzeni */
-  flex-direction: row; /* Öğeler yatay sıralansın */
-  justify-content: space-around; /* Öğeler arası boşluk düzeni */
-  flex-wrap: wrap; /* Ekran daraldığında öğeler alt satıra geçebilir */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding: 20px;
   width: 100%;
-  max-width: 1000px; /* Bu da CV bölümü için aynı genişlik sınırlaması */
+  max-width: 1000px;
 }
-/* Başlıkların Arka Plan Rengini Değiştirme */
+
 .cv-section h2 {
   background-color: #f2f2f2;
   padding: 10px;
@@ -144,11 +162,11 @@ main {
   text-align: center;
 }
 
-/* CV kategorileri (A Sınıfı, B Sınıfı, C Sınıfı) */
+/* CV Kategorileri */
 .cv-category {
   display: flex;
-  flex-direction: column; /* Profil kutuları dikey sıralanacak */
-  align-items: center; /* Ortalanacak */
+  flex-direction: column;
+  align-items: center;
   min-width: 280px;
   max-width: 300px;
   margin: 10px;
@@ -157,22 +175,19 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* A Sınıfı Arka Plan Rengi */
 .a-class {
-  background-color: #e1f5fe; /* Açık mavi */
+  background-color: #e1f5fe;
 }
 
-/* B Sınıfı Arka Plan Rengi */
 .b-class {
-  background-color: #fff9c4; /* Açık sarı */
+  background-color: #fff9c4;
 }
 
-/* C Sınıfı Arka Plan Rengi */
 .c-class {
-  background-color: #c8e6c9; /* Açık yeşil */
+  background-color: #c8e6c9;
 }
 
-/* Profil Baloncukları (İçerik kutuları) */
+/* Profil Baloncukları */
 .cv-bubble {
   background-color: #f9f9f9;
   padding: 20px;
@@ -202,11 +217,11 @@ main {
   background-color: #005fa3;
 }
 
-
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #002147; /* Footer rengini değiştirdik */
+  background-color: #002147;
   color: #fff;
   width: 100%;
   position: relative;
