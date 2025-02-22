@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* Renk Değişkenleri */
+:root {
+  --turuncu: #ff6600; /* Ana turuncu */
+  --koyuturuncu: #054a83;
+  --turuncu-hover: #ff4500; /* Hover için daha koyu turuncu */
+  --beyaz: #ffffff; /* Beyaz */
+  --koyu-mavi: #002147; /* Koyu mavi */
+  --gri: #e6e6e6; /* Gri */
+  --acik-gri: #f5f5f5; /* Açık gri */
+  --siyah: #333; /* Siyah */
+}
+
 /* Temel stil ayarları */
 * {
   box-sizing: border-box;
@@ -12,29 +24,37 @@ html, body {
   display: flex;
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
-  background-color: #e6e6e6;
-  color: #333;
+  background-color: var(--gri);
+  color: var(--siyah);
 }
 
-/* Header Kısmı */
 header {
   text-align: center;
   padding: 50px 0;
   position: relative;
-  background-color: #fff; /* Header arka planını beyaz yapalım */
-  z-index: 1; /* Header'ın üstte olmasını sağlıyoruz */
+  background-color: var(--beyaz);
+  z-index: 1;
+  display: flex;
+  flex-direction: column; /* Title ve logo alt alta olacak */
+  align-items: center; /* Başlıklar ortalanacak */
+  justify-content: center;
 }
 
-/* Başlıkların stilini ayarlıyoruz */
+header .logo {
+  width: 50px; /* Logo boyutunu ayarlıyoruz */
+  height: auto;
+  margin-right: 20px; /* Başlıkla aradaki mesafeyi ayarlıyoruz */
+}
+
 header h1 {
   font-size: 3em;
   margin-bottom: 10px;
-  color: #002147;
+  color: var(--koyu-mavi); /* Başlık rengini koyu mavi yapalım */
 }
 
 header h2 {
   font-size: 1.5em;
-  color: #555;
+  color: var(--koyu-mavi); /* Alt başlık rengini koyu mavi yapalım */
 }
 
 /* Şeritler - Header Üst ve Alt */
@@ -45,25 +65,25 @@ header::after {
   left: 0;
   width: 100%;
   height: 40px;
-  background-image: url('images/mainbackground.jpeg'); /* Resim ekleniyor */
+  background-image: url('images/mainbackground.jpg'); /* Arka plan resmi */
   background-size: cover;
   background-position: center;
-  z-index: -1; /* Şeritler header'ın arkasında olmalı */
+  z-index: -1; /* Şeritlerin başlığın arkasında olmasını sağlıyoruz */
 }
 
 /* Üst şerit */
 header::before {
-  top: -10px; /* Şerit başlığın üstünde olacak */
+  top: 0px; /* Üst şerit başlığın üstünde olacak */
 }
 
 /* Alt şerit */
 header::after {
-  bottom: -10px; /* Şerit başlığın altında olacak */
+  bottom: 0px; /* Alt şerit başlığın altında olacak */
 }
 
 /* Navigation Menü */
 nav {
-  background-color: #002147;
+  background-color: var(--koyu-mavi);
 }
 
 .menu {
@@ -79,13 +99,13 @@ nav {
 .menu > li > a {
   display: block;
   padding: 15px 20px;
-  color: #fff;
+  color: var(--beyaz);
   text-decoration: none;
   font-weight: bold;
 }
 
 .menu > li > a:hover {
-  background-color: #00509e;
+  background-color: var(--turuncu);
 }
 
 /* Dropdown içerik */
@@ -94,7 +114,7 @@ nav {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #00509e;
+  background-color: var(--turuncu);
   min-width: 180px;
   border-radius: 0 0 5px 5px;
   z-index: 1000;
@@ -107,12 +127,12 @@ nav {
 .dropdown-content li a {
   display: block;
   padding: 10px 15px;
-  color: #fff;
+  color: var(--beyaz);
   text-decoration: none;
 }
 
 .dropdown-content li a:hover {
-  background-color: #007acc;
+  background-color: var(--turuncu-hover);
 }
 
 .dropdown:hover .dropdown-content {
@@ -121,20 +141,19 @@ nav {
 
 /* Main İçeriği */
 main {
-  background-image: url('images/herobackground.jpg');
-  background-size: cover;
-  background-position: center;
+  background-color: var(--koyuturuncu); /* Turuncu arka plan */
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 20px;
+  color: var(--beyaz); /* Yazı rengi beyaz */
 }
 
 /* ISG Bilgisi */
 .isg-info {
-  background-color: #fff;
+  background-color: var(--beyaz);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -155,7 +174,7 @@ main {
 }
 
 .cv-section h2 {
-  background-color: #f2f2f2;
+  background-color: var(--acik-gri);
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -207,22 +226,22 @@ main {
   display: inline-block;
   margin-top: 10px;
   padding: 5px 10px;
-  background-color: #007acc;
-  color: #fff;
+  background-color: var(--turuncu);
+  color: var(--beyaz);
   text-decoration: none;
   border-radius: 5px;
 }
 
 .view-pdf:hover {
-  background-color: #005fa3;
+  background-color: var(--turuncu-hover);
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #002147;
-  color: #fff;
+  background-color: var(--koyu-mavi);
+  color: var(--beyaz);
   width: 100%;
   position: relative;
 }
